@@ -1,4 +1,4 @@
-# How to use:
+# How to use: (Windows)
 #   cmake -S . -B Build -G "MinGW Makefiles"
 #   cd Build
 #   mingw32-make
@@ -43,4 +43,5 @@ set_target_properties(tests
   PROPERTIES
     CXX_STANDARD 17
     CXX_EXTENSIONS OFF
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
 )
