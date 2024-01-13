@@ -144,3 +144,9 @@ void array_swap(struct array *self, size_t i, size_t j);
 * 
 */
 void array_quick_sort_partial(struct array *self,ptrdiff_t i, ptrdiff_t j);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // CONTAINERS_H

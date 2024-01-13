@@ -1,11 +1,20 @@
+# How to use:
+#   cmake -S . -B Build -G "MinGW Makefiles"
+#   cd Build
+#   mingw32-make
+
 cmake_minimum_required(VERSION 3.10)
 
-project(FA
+set(CMAKE_CXX_COMPILER "g++")
+set(CMAKE_C_COMPILER "gcc")
+
+project(
+  tests
+  VERSION 1.0
   LANGUAGES CXX C
 )
 
-find_package(Threads)
-
+find_package(Threads REQUIRED)
 
 add_executable(tests
   dArray.c
@@ -22,11 +31,12 @@ target_include_directories(tests
 target_link_libraries(tests
   PRIVATE
     Threads::Threads
+    # Add other libraries if needed
 )
 
 target_compile_options(tests
   PRIVATE
-    "-Wall" "-Wextra" "-pedantic" "-g" "-O2"
+    -Wall -Wextra -pedantic -g -O2
 )
 
 set_target_properties(tests
