@@ -9,10 +9,6 @@
 
 #define BIG_SIZE 1000
 
-/*
- * array_create
- */
-
 TEST(ArrayCreateTest, Empty) {
   struct array a;
   array_create(&a);
